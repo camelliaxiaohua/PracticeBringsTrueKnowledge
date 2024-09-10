@@ -1,0 +1,14 @@
+server:
+  port: 23790
+
+# 启用定时任务相关配置
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 5  # 定时任务线程池的大小，5表示最多同时执行5个定时任务
+      shutdown:
+        await-termination: true  # 应用程序关闭时是否等待所有任务完成
+        await-termination-period: 30s  # 等待终止任务的最大时间，30秒
+
+# http://localhost:23790/index.html

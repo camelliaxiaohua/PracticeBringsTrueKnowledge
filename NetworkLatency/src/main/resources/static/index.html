@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Latency</title>
+</head>
+<body>
+<h1>实时网络延迟监控</h1>
+<h2>Ping 延迟：<span id="ping-latency">等待数据...</span> 毫秒</h2>
+<h2>HTTP 延迟：<span id="http-latency">等待数据...</span> 毫秒</h2>
+
+<script>
+    // 创建 WebSocket 连接
+    var socket = new WebSocket('ws://localhost:23790/latency-ws');
+
+    // 当收到消息时，根据数据类型更新相应的延迟数据
+    socket.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+        if (data.type === 'ping') {
+            document.getElementById('ping-latency').innerText = data.latency;
+        } else if (data.type === 'http') {
+            document.getElementById('http-latency').innerText = data.latency;
+        }
+    };
+
+    socket.onopen = function() {
+        console.log("WebSocket 连接已打开");
+    };
+
+    socket.onclose = function() {
+        console.log("WebSocket 连接已关闭");
+    };
+</script>
+</body>
+</html>
