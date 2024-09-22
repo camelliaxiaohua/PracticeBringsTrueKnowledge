@@ -12,7 +12,7 @@
 
 <script>
     // 创建 WebSocket 连接
-    var socket = new WebSocket('ws://localhost:23790/latency-ws');
+    var socket = new WebSocket('ws://111.229.84.24:23790/latency-ws');
 
     // 当收到消息时，根据数据类型更新相应的延迟数据
     socket.onmessage = function(event) {
