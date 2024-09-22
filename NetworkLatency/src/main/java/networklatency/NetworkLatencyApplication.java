@@ -13,8 +13,3 @@ public class NetworkLatencyApplication {
     }
 
 }
-
-
-// init
-
-//haha
