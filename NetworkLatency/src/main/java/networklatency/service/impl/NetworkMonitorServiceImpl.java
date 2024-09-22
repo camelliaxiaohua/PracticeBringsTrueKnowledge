@@ -19,7 +19,7 @@ public class NetworkMonitorServiceImpl implements NetworkMonitorService {
     @Override
     @Scheduled(fixedRate = 500) // 每2秒执行一次
     public Long pingDevice() {
-        String host = "www.bilibili.com";
+        String host = "camelliaxiaohua.online";
         try {
             InetAddress address = InetAddress.getByName(host);
             long startTime = System.currentTimeMillis();
@@ -45,7 +45,7 @@ public class NetworkMonitorServiceImpl implements NetworkMonitorService {
     @Override
     @Scheduled(fixedRate = 500) // 每2秒执行一次
     public Long checkHttpLatency() {
-        String urlString = "https://www.bilibili.com";
+        String urlString = "https://camelliaxiaohua.online";
         try {
             URL url = new URL(urlString);
             long startTime = System.currentTimeMillis();
