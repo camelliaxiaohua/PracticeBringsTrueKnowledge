@@ -76,7 +76,7 @@ public class SFTPFileReader {
         int port = 22;
         String username = "root";
         String password = "24211";
-        String remoteFolderPath = "/var/tmp/";
+        String remoteFolderPath = "/camelliaBooks/";
 
         // 调用方法获取文件名列表
         List<String> fileNames = getFileNamesFromSFTP(host, port, username, password, remoteFolderPath);
