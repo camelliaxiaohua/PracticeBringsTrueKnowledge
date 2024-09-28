@@ -1,6 +1,6 @@
 package camellia.cloudstorage.utils;
 
-import camellia.cloudstorage.enums.SftpConfig;
+import camellia.cloudstorage.enums.SftpEnum;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
@@ -20,10 +20,10 @@ public class SftpUtils {
     private SftpUtils() {}
 
     public static ChannelSftp openClient() {
-        String userName = SftpConfig.USERNAME.getValue();
-        String host = SftpConfig.HOST.getValue();
-        int port = Integer.parseInt(SftpConfig.PORT.getValue());
-        String password = SftpConfig.PASSWORD.getValue();
+        String userName = SftpEnum.USERNAME.getValue();
+        String host = SftpEnum.HOST.getValue();
+        int port = Integer.parseInt(SftpEnum.PORT.getValue());
+        String password = SftpEnum.PASSWORD.getValue();
         try {
             JSch jsch = new JSch();
             Session sess = jsch.getSession(userName, host, port);
